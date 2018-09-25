@@ -59,57 +59,6 @@ app.use(function(req, res, next) {
     }
 });
 
-
-
-// var data={
-//     name:"Almanya Proje",
-//     image:"https://gezievreni.com/wp-content/uploads/2016/12/Hollanda-Hakkinda-Bilmeniz-Gerekenler.jpg",
-//     description:"Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.",
-//     author:{
-//         id:currentUser._id,
-//         username:"fkur"
-//     },
-//     ptype:"KA101",
-//     subject:"Hate speech",
-//     venue:"Holland/Orvelte",
-//     dates:"18-25 February 2019",
-//     poeplenumber:"4+1",
-//     agelimit:"18-30",
-//     partners:"Turkey,Czechia,UK,Belgium,Holland,Germany",
-//     completed:false
-// };
-
-// Project.create(data,function(err,cp){
-//   if(err){
-//       console.log(err);
-//   }
-//   else{
-//       console.log("data added");
-//       console.log("-----------------");
-//       console.log(cp);
-//       console.log("-----------------");
-//       console.log(cp.author);
-      
-//   }
-// });
-
-
-// var userData={
-//   username:"fkur",
-//   password:"130895f"
-// };
-// User.register(new User({username:userData.username}),userData.password,function(err,createdUser){
-//   if(err){
-//       console.log(err);
-//   }
-//   else{
-//       console.log("Created User\n--------------");
-//       console.log(createdUser);
-//   }
-// });
-
-
-
     //TO CONNECT TO LOCALHOST
 app.listen(process.env.PORT,process.env.IP,function(){
    console.log("Server has started"); 
