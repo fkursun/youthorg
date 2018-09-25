@@ -1,0 +1,40 @@
+<% include partials/header %>
+
+<h1>Mesajlar buraya gelecek</h1>
+
+<% contact.forEach(function(cd){ %>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="bubbles">
+            <div class="message-author">
+                <p><strong>Name</strong>: <%= cd.name%></p>
+                <p><strong>E-mail</strong>: <%= cd.email%></p>
+                <p></p>
+            </div>
+            <ul>
+                <div id="top"><li></li></div>
+                <div id="mid"><li></li></div>
+                <div id="bot"><li></li></div>
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="messages">
+                        <div class="message-content">
+                            <strong>Subject</strong>: <%= cd.subject%>
+                        </div>
+                        <div class="message-content" id="contactmessage">
+                            <strong>Message</strong>: <%= cd.message%>
+                        </div>
+                    </div>
+                    <hr style="border-color:red; width:100%;">
+                </div>
+            </div>
+        </div>
+    
+<% })%>
+
+<% include partials/footer%>

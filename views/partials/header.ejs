@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ImpACTive Youth Organization</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+	<link rel="stylesheet" href="/stylesheets/app.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Hind:500" rel="stylesheet">
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCDsZlR31L0NlNHR0oVABUo1JZRqbGLk9I&callback=map"></script>
+	
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+				<a class="navbar-left"  href="/"><img  width="100px" heigth="100px" src="https://www.christchurchblackburn.org.uk/Images/content/1930/764252.png"></a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="<%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>"><a href="/index">Home <span class="sr-only"></span></a></li>
+						<li class="<%= typeof page !== 'undefined' && page === 'scope' ? 'active' : '' %>"><a href="/scope">Volunteering Scope</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="/ongoingProjects">On Going Projects</a></li>
+								<li><a href="/completedProjects">Completed Projects</a></li>
+							</ul>
+						</li>
+					</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<% if(currentUser){ %>
+						<li class="<%= typeof page !== 'undefined' && page === 'createproject' ? 'active' : '' %>"><a href="/addproject">Create Project</a></li>
+						<li><a>Signed as <%= currentUser.username %></a></li>
+						<li class="<%= typeof page !=='undefined' && page ==='messages' ? 'active':'' %>"><a href="/messages">Contact messages</a></li>
+						<li><a href="/logout">Logout</a></li>
+						
+					<% } %>
+					<li class="<%= typeof page !== 'undefined' && page === 'contact' ? 'active' : '' %>"><a href="/contact">Contact</a></li>
+				</ul>
+				</div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+        <% if(error&&error.length>0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%=error%>
+            </div>
+        <% } %>
+        <% if(success&&success.length>0){ %>
+            <div class="alert alert-success" role="alert">
+                <%=success%>
+            </div>
+        <% } %>
+    </div>
+    

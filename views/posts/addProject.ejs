@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+<div class="container">
+    <h1 style="text-align:center;">CREATE A NEW Project</h1>
+    <div class="add-project">
+        <form action="/posts" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="blog[name]"placeholder="name"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="textarea" name="blog[description]"placeholder="description"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[image]" placeholder="image url"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[ptype]" placeholder="ptype"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[subject]" placeholder="subject"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[venue]" placeholder="venue"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[dates]" placeholder="dates"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[peoplenumber]" placeholder="people number"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[agelimit]" placeholder="age limit"required="true">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"name="blog[partners]" placeholder="partners"required="true">
+            </div>
+            <div class="form-group">
+                <label for="complete">Ongoing</label>
+                <input class="form-control" type="radio"name="blog[completed]" value="false" id="complete"required="true">
+                <label for="complete">Complete</label>
+                <input class="form-control" type="radio"name="blog[completed]" value="true" id="complete"required="true">
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-lg btn-info btn-block">SUBMIT</button>
+            </div>
+        </form>
+
+        <a href="/index">Click to go back to Index</a>
+    </div>
+</div>
+<% include ../partials/footer %>

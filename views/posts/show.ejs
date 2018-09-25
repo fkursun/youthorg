@@ -1,0 +1,41 @@
+<% include ../partials/header%>
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <h2><%= foundProject.name %></h2>
+                <img src="<%=foundProject.image%>" class="ui rounded image img-responsive">
+                <p></p>
+                <div class="caption-full">
+                    <p><strong>Project Name</strong>:<%=foundProject.name%></p>
+                    <p><strong>Project Type</strong>:<%=foundProject.ptype%></p>
+                    <p><strong>Project Venue</strong>:<%=foundProject.venue%></p>
+                    <p><strong>Project Subject</strong>:<%=foundProject.subject%></p>
+                    <p><strong>Project Dates</strong>:<%=foundProject.dates%></p>
+                    <p><strong>Number of participants</strong>:<%=foundProject.peoplenumber%></p>
+                    <p><strong>Age limit</strong>:<%=foundProject.agelimit%></p>
+                    <p><strong>Partner Countries</strong>:<%=foundProject.partners%></p>
+                    <hr>
+                    <p><%=foundProject.description%></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+			<div class="list-group">
+			    <h4>Other Open Calls!</h4>
+			    <% allP.forEach(function(pj){ %>
+			        <% if(pj.completed===true){ %>
+			            <li class="list-group-item"><a href="/completedProjects/<%=pj._id %>"><%=pj.name%></a></li>
+			        <% } %>
+			        <% if(pj.completed===false){ %>
+			            <li class="list-group-item"><a href="/ongoingProjects/<%=pj._id %>"><%=pj.name%></a></li>
+			        <% } %>
+			    <% }); %>
+            </div>
+		</div>
+    </div>
+</div>
+
+
+<% include ../partials/footer%>

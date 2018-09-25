@@ -1,0 +1,67 @@
+<% include ../partials/header%>
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="top-menu">
+                    <h1>Completed Projects</h1>
+                    <div class="search-bar">
+                        <form id="search" action="/completedProjects" method="GET">
+                            <input type="text" name="search" placeholder="Search completed projects">
+                            <button><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <%if(compProjects.length===0){%>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="alert alert-danger text-center" role="alert">
+                        <h1>THERE IS NO PROJECT AT THIS MOMENT</h1>
+                    </div>
+                    <div class="no-project">
+                        <img src="https://americanvulgaria.com/wp-content/uploads/2018/07/sorry-to-bother-you.jpg">
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.getElementById('search').style.visibility='hidden';
+            </script>
+        <% } %>
+        <div class="row">
+        <% compProjects.forEach(function(cg){ %>
+            <% if(cg.completed===true){ %>
+
+                <div class="col-sm-12">
+                    <div class="call">
+                        <div class="row text-center">
+                            <hr>
+                            <div class="col-sm-4" style="padding-top:2.5%">
+                                <h2><a href="/completedProjects/<%=cg._id%>"><%= cg.name%></a></h2>
+                                <div class="thumbnail call-thumb">
+                                    <a href="/completedProjects/<%=cg._id%>"><img src="<%= cg.image%>"></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 details">
+                                <div class="desc">
+                                    <p><%=cg.description.substring(0,300)%><a href="/completedProjects/<%=cg._id%>"> <i class="fas fa-ellipsis-h"></i></a> </p>
+                                    <span><i class="far fa-calendar-alt"><a href="/completedProjects/<%=cg._id%>"> Created:<%=cg.createdtime%></a></i></span>
+                                </div>
+                                <% if(currentUser) {%>
+                                    <div class="configuration">
+                                        <form id="delete-project" action="/completedProjects/<%=cg.id%>?_method=DELETE" method="POST">
+                                            <button class="btn btn-xs btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                                        </form>
+                                        <a class="btn btn-warning btn-xs" href="/completedProjects/<%=cg.id%>/edit"><i class="fas fa-edit"></i> Edit</a>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %> 
+        <% }); %> 
+    </div>
+</div>
+<% include ../partials/footer%>
