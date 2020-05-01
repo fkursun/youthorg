@@ -6,7 +6,7 @@
   <strong>Prerequirements</strong></br>
   npm install</br>
   node app.js</br>
-  All the features can be seen and used after signing in on http://impactiveyouth.herokuapp.com/login page id:fkur password:130895f
+  All the features can be seen and used after signing in on http://impactiveyouth.herokuapp.com/login
   </br></br>
   <strong>Author</strong></br>
   Furkan Kursun</br></br>
